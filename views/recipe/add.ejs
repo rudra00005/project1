@@ -1,0 +1,108 @@
+<h1>Add Recipe</h1>
+
+<form action="/recipe/add" method="POST">
+
+    <div>
+
+        <label>Recipe Title</label><br>
+
+        <input
+            type="text"
+            name="title"
+            required
+        >
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Description</label><br>
+
+        <textarea
+            name="description"
+            rows="4"
+            required
+        ></textarea>
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Category</label><br>
+
+        <input
+            type="text"
+            name="category"
+            required
+        >
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Cuisine</label><br>
+
+        <input
+            type="text"
+            name="cuisine"
+        >
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Servings</label><br>
+
+        <input
+            type="number"
+            name="servings"
+            value="1"
+            min="1"
+        >
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Cooking Time (Minutes)</label><br>
+
+        <input
+            type="number"
+            name="cookingTime"
+        >
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Instructions</label><br>
+
+        <textarea
+            name="instructions"
+            rows="8"
+            required
+        ></textarea>
+
+    </div>
+
+    <br>
+
+    <button type="submit">
+
+        Add Recipe
+
+    </button>
+
+</form>

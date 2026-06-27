@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const recipeRoutes = require("./routes/recipeRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const express = require("express");
@@ -74,7 +74,8 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.use("/", authRoutes);
-
+app.use("/", userRoutes);
+app.use("/", recipeRoutes);
 app.listen(PORT, () => {
 
     console.log(`Server Running on http://localhost:${PORT}`);
