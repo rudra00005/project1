@@ -1,5 +1,7 @@
 <h1>Login</h1>
 
+<%- include("../partials/messages") %>
+
 <form action="/login" method="POST">
 
     <input
@@ -25,6 +27,22 @@
         Login
 
     </button>
+
+    <script>
+
+setTimeout(() => {
+
+    const alert = document.querySelector(".alert");
+
+    if(alert){
+
+        alert.style.display = "none";
+
+    }
+
+},3000);
+
+</script>
 
 </form>
 

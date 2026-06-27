@@ -1,5 +1,7 @@
 <h1>User Registration</h1>
 
+<%- include("../partials/messages") %>
+
 <p>Registration Page</p>
 
 <a href="/login">Login</a>
@@ -55,6 +57,22 @@
     <button type="submit">
         Register
     </button>
+    
+    <script>
+
+setTimeout(() => {
+
+    const alert = document.querySelector(".alert");
+
+    if(alert){
+
+        alert.style.display = "none";
+
+    }
+
+},3000);
+
+</script>
 
 </form>
 
