@@ -1,0 +1,65 @@
+<h1>User Registration</h1>
+
+<p>Registration Page</p>
+
+<a href="/login">Login</a>
+
+<h1>User Registration</h1>
+
+<form action="/register" method="POST">
+
+    <div>
+        <label>Name</label><br>
+        <input
+            type="text"
+            name="name"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label>Email</label><br>
+        <input
+            type="email"
+            name="email"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label>Password</label><br>
+        <input
+            type="password"
+            name="password"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label>Confirm Password</label><br>
+        <input
+            type="password"
+            name="confirmPassword"
+            required
+        >
+    </div>
+
+    <br>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+<br>
+
+<a href="/login">
+    Already have an account? Login
+</a>
