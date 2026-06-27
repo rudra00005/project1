@@ -11,6 +11,37 @@ exports.showAddRecipe = (req, res) => {
 
 };
 
+// ==========================
+// Show All Recipes
+// ==========================
+exports.getAllRecipes = async (req, res) => {
+
+    try {
+
+        const recipes = await Recipe.find()
+            .populate("createdBy", "name")
+            .sort({ createdAt: -1 });
+
+        res.render("recipe/list", {
+
+            title: "All Recipes",
+
+            recipes
+
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        req.flash("error", "Unable to fetch recipes.");
+
+        res.redirect("/");
+
+    }
+
+};
+
 // Save Recipe
 exports.addRecipe = async (req, res) => {
 
@@ -48,7 +79,7 @@ exports.addRecipe = async (req, res) => {
 
         req.flash("success", "Recipe Added Successfully.");
 
-        res.redirect("/recipe/add");
+        res.redirect("/recipes");
 
     }
 

@@ -12,4 +12,7 @@ router.get("/recipe/add", auth, recipeController.showAddRecipe);
 // Save Recipe
 router.post("/recipe/add", auth, recipeController.addRecipe);
 
+// Show All Recipes
+router.get("/recipes", recipeController.getAllRecipes);
+
 module.exports = router;

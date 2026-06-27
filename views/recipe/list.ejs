@@ -1,0 +1,78 @@
+<h1>All Recipes</h1>
+
+<hr>
+
+<a href="/recipe/add">
+
+Add New Recipe
+
+</a>
+
+<br><br>
+
+<% if(recipes.length === 0){ %>
+
+<h3>No Recipes Found.</h3>
+
+<% } %>
+
+<% recipes.forEach(recipe => { %>
+
+<div
+style="border:1px solid #ccc; padding:15px; margin-bottom:20px; border-radius:8px;">
+
+    <h2>
+
+        <%= recipe.title %>
+
+    </h2>
+
+    <p>
+
+        <strong>Category:</strong>
+
+        <%= recipe.category %>
+
+    </p>
+
+    <p>
+
+        <strong>Cuisine:</strong>
+
+        <%= recipe.cuisine %>
+
+    </p>
+
+    <p>
+
+        <strong>Servings:</strong>
+
+        <%= recipe.servings %>
+
+    </p>
+
+    <p>
+
+        <strong>Cooking Time:</strong>
+
+        <%= recipe.cookingTime %> Minutes
+
+    </p>
+
+    <p>
+
+        <%= recipe.description %>
+
+    </p>
+
+    <p>
+
+        <strong>Created By:</strong>
+
+        <%= recipe.createdBy.name %>
+
+    </p>
+
+</div>
+
+<% }) %>
