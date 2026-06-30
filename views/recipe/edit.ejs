@@ -1,0 +1,77 @@
+<h1>Edit Recipe</h1>
+
+<form action="/recipe/edit/<%= recipe._id %>" method="POST">
+
+    <label>Recipe Title</label><br>
+    <input
+        type="text"
+        name="title"
+        value="<%= recipe.title %>"
+        required
+    >
+
+    <br><br>
+
+    <label>Description</label><br>
+    <textarea
+        name="description"
+        rows="4"
+        required
+    ><%= recipe.description %></textarea>
+
+    <br><br>
+
+    <label>Category</label><br>
+    <input
+        type="text"
+        name="category"
+        value="<%= recipe.category %>"
+        required
+    >
+
+    <br><br>
+
+    <label>Cuisine</label><br>
+    <input
+        type="text"
+        name="cuisine"
+        value="<%= recipe.cuisine %>"
+    >
+
+    <br><br>
+
+    <label>Servings</label><br>
+    <input
+        type="number"
+        name="servings"
+        value="<%= recipe.servings %>"
+        min="1"
+    >
+
+    <br><br>
+
+    <label>Cooking Time</label><br>
+    <input
+        type="number"
+        name="cookingTime"
+        value="<%= recipe.cookingTime %>"
+    >
+
+    <br><br>
+
+    <label>Instructions</label><br>
+    <textarea
+        name="instructions"
+        rows="8"
+        required
+    ><%= recipe.instructions %></textarea>
+
+    <br><br>
+
+    <button type="submit">
+
+        Update Recipe
+
+    </button>
+
+</form>

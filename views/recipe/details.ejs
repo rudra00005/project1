@@ -1,0 +1,163 @@
+<h1><%= recipe.title %></h1>
+
+<hr>
+
+<p>
+
+    <strong>Description:</strong>
+
+    <%= recipe.description %>
+
+</p>
+
+<p>
+
+    <strong>Category:</strong>
+
+    <%= recipe.category %>
+
+</p>
+
+<p>
+
+    <strong>Cuisine:</strong>
+
+    <%= recipe.cuisine %>
+
+</p>
+
+<p>
+
+    <strong>Servings:</strong>
+
+    <%= recipe.servings %>
+
+</p>
+
+<p>
+
+    <strong>Cooking Time:</strong>
+
+    <%= recipe.cookingTime %> Minutes
+
+</p>
+
+<p>
+
+    <strong>Created By:</strong>
+
+    <%= recipe.createdBy.name %>
+
+</p>
+
+<hr>
+
+<a href="/recipe/edit/<%= recipe._id %>">
+
+    Edit Recipe
+
+</a>
+
+&nbsp;&nbsp;
+
+<a href="/recipes">
+
+    Back to Recipes
+
+</a>
+
+<hr>
+
+<h2>Ingredients</h2>
+
+<% if(recipe.ingredients.length === 0){ %>
+
+<p>No Ingredients Added.</p>
+
+<% } else { %>
+
+<ul>
+
+<% recipe.ingredients.forEach(item => { %>
+
+<li>
+
+<%= item.quantity %>
+
+<%= item.unit %>
+
+<%= item.name %>
+
+</li>
+
+<% }) %>
+
+</ul>
+
+<% } %>
+
+<hr>
+
+<a href="/recipe/edit/<%= recipe._id %>">
+
+    Edit Recipe
+
+</a>
+
+&nbsp;&nbsp;
+
+<form
+    action="/recipe/delete/<%= recipe._id %>"
+    method="POST"
+    id="deleteForm"
+    style="display:inline;">
+
+    <button type="button" onclick="confirmDelete()">
+
+        Delete Recipe
+
+    </button>
+
+</form>
+
+&nbsp;&nbsp;
+
+<a href="/recipes">
+
+    Back to Recipes
+
+</a>
+
+<script>
+
+function confirmDelete() {
+
+    Swal.fire({
+
+        title: "Delete Recipe?",
+
+        text: "This action cannot be undone.",
+
+        icon: "warning",
+
+        showCancelButton: true,
+
+        confirmButtonColor: "#d33",
+
+        cancelButtonColor: "#3085d6",
+
+        confirmButtonText: "Yes, Delete"
+
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            document.getElementById("deleteForm").submit();
+
+        }
+
+    });
+
+}
+
+</script>
